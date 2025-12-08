@@ -9,8 +9,14 @@
   </head>
   <body>
     <div class="bg-green-200 max-w-md p-2 m-2 rounded">
-      <input type="text" placeholder="TODOを入力" class="bg-white rounded-xl py-1.5 px-4">
+      <input
+        id="add-text"
+        type="text"
+        placeholder="TODOを入力"
+        class="bg-white rounded-xl py-1.5 px-4"
+      >
       <button
+        id="add-button"
         type="button"
         class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer hover:text-white"
       >
@@ -20,7 +26,7 @@
 
     <div class="border border-green-500 max-w-md min-h-52 p-2 m-2 rounded-xl">
       <p class="text-center mt-0 font-black mb-3">未完了のTODO</p>
-      <ul class="list-disc ml-6">
+      <ul id="incomplete-list" class="list-disc ml-6">
         <li>
           <div class="flex list-disc items-center">
             <p class="m-1.5">TODOです</p>

@@ -1,11 +1,9 @@
-const sayHello = (name = 'ゲスト') => `こんにちは！${name}さん！`;
-console.log(sayHello('etranger2268'));
-console.log(sayHello());
+const name = 'etranger2268';
+const age = 26;
 
 const myProfile = {
-  age: 26,
+  name,
+  age,
 };
 
-const { age, name = 'ゲスト' } = myProfile;
-console.log(age);
-console.log(name);
+console.log(myProfile);

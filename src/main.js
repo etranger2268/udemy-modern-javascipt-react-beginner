@@ -3,6 +3,12 @@ const onClickAdd = () => {
   const inputText = document.getElementById('add-text').value;
   document.getElementById('add-text').value = '';
 
+  // 未完了リストに追加
+  createIncompleteTodo(inputText);
+};
+
+// 渡された引数を基に未完了のTODOを作成する関数
+const createIncompleteTodo = (todo) => {
   // li生成
   const li = document.createElement('li');
 
@@ -13,7 +19,7 @@ const onClickAdd = () => {
   // p生成
   const p = document.createElement('p');
   p.className = 'm-1.5';
-  p.innerText = inputText;
+  p.innerText = todo;
 
   // buttonタグ生成
   const completeButton = document.createElement('button');
@@ -31,6 +37,14 @@ const onClickAdd = () => {
     backButton.innerText = '戻す';
     backButton.className =
       'bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer';
+    backButton.addEventListener('click', () => {
+      // TODOの内容を取得し、未完了リストに追加
+      const todoText = backButton.previousElementSibling.innerText;
+      createIncompleteTodo(todoText);
+
+      // 押された戻すボタンの親にあるliタグを削除
+      backButton.closest('li').remove();
+    });
     moveTarget.firstElementChild.appendChild(backButton);
 
     // 完了リストに移動
@@ -38,7 +52,7 @@ const onClickAdd = () => {
   });
 
   const deleteButton = document.createElement('button');
-  deleteButton.innerText = '完了';
+  deleteButton.innerText = '削除';
   deleteButton.className =
     'bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer';
   deleteButton.addEventListener('click', () => {

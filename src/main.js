@@ -28,8 +28,10 @@ const onClickAdd = () => {
   deleteButton.innerText = '完了';
   deleteButton.className =
     'bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer';
-  deleteButton.addEventListener('click', () => {
-    alert('削除');
+  deleteButton.addEventListener('click', () => {  
+    // 押された削除ボタンの親にあるliタグを未完了リストから削除
+    const deleteTarget = deleteButton.closest('li');
+    document.getElementById('incomplete-list').removeChild(deleteTarget);
   });
 
   // liタグの子要素に各要素を設定

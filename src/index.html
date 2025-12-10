@@ -1,37 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>udemy-modern-javascipt-react-beginner</title>
-    <link rel="stylesheet" href="../dist/output.css">
-    <script type="module" src="main.js"></script>
+    <title>udemy-modern-javascript-react-beginner</title>
   </head>
   <body>
-    <div class="bg-green-200 max-w-md p-2 m-2 rounded">
-      <input
-        id="add-text"
-        type="text"
-        placeholder="TODOを入力"
-        class="bg-white rounded-xl py-1.5 px-4"
-      >
-      <button
-        id="add-button"
-        type="button"
-        class="bg-gray-100 py-1 px-4 mx-1 rounded-xl hover:bg-gray-200 hover:cursor-pointer hover:text-white"
-      >
-        追加
-      </button>
-    </div>
-
-    <div class="border border-green-500 max-w-md min-h-52 p-2 m-2 rounded-xl">
-      <p class="text-center mt-0 font-black mb-3">未完了のTODO</p>
-      <ul id="incomplete-list" class="list-disc ml-6"></ul>
-    </div>
-
-    <div class="border border-green-500 max-w-md min-h-52 p-2 m-2 rounded-xl bg-green-100">
-      <p class="text-center mt-0 font-black mb-3">完了のTODO</p>
-      <ul id="complete-list" class="list-disc ml-6"></ul>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="main.jsx"></script>
   </body>
 </html>

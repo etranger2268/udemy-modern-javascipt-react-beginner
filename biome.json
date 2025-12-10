@@ -46,15 +46,6 @@
       },
       "style": {
         "noDefaultExport": "off"
-      },
-      "nursery": {
-        "useSortedClasses": {
-          "level": "warn",
-          "options": {
-            "attributes": ["class", "classList"],
-            "functions": ["cn", "clsx", "cva"]
-          }
-        }
       }
     }
   }

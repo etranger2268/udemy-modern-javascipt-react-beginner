@@ -1,9 +1,17 @@
-import { StrictMode } from 'react';
+import { Fragment, StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import './index.css';
-import App from './App.jsx';
 
-const root = createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+const App = () => {
+  return (
+    <>
+      <h1>こんにちは!</h1>
+      <p>お元気ですか?</p>
+    </>
+  );
+};
 
 root.render(
   <StrictMode>

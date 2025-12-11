@@ -1,20 +1,34 @@
 import { useState } from 'react';
 
 export default function Todo() {
+  const [todoText, setTodoText] = useState('');
   const [incompleteTodos, setIncompleteTodos] = useState(['TODOです1', 'TODOです2']);
   const [completeTodos, setCompleteTodos] = useState(['TODOでした1', 'TODOでした2']);
+
+  const onChangeTodoText = e => setTodoText(e.target.value);
+
+  const onClickAdd = () => {
+    const trimTodoText = todoText.trim();
+    if (trimTodoText === '') return;
+    setIncompleteTodos(prev => [...prev, trimTodoText])
+    setTodoText('');
+  }
 
   return (
     <>
       <div className="m-2 max-w-md rounded bg-green-200 p-2">
         <input
           type="text"
+          value={todoText}
+          onChange={onChangeTodoText}
           placeholder="TODOを入力"
           className="m-2 rounded-xl bg-white px-4 py-1.5"
         />
         <button
           type="button"
           className="rounded-xl bg-gray-100 px-4 py-1 hover:cursor-pointer hover:bg-gray-200 hover:text-white"
+
+          onClick={onClickAdd}
         >
           追加
         </button>

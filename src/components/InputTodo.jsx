@@ -1,4 +1,4 @@
-export default function InputTodo({ todoText, onChange, onClick}) {
+export default function InputTodo({ todoText, onChange, onClick, disabled }) {
   return (
     <div className="m-2 max-w-md rounded bg-green-200 p-2">
       <input
@@ -6,7 +6,8 @@ export default function InputTodo({ todoText, onChange, onClick}) {
         value={todoText}
         onChange={onChange}
         placeholder="TODOを入力"
-        className="m-2 rounded-xl bg-white px-4 py-1.5"
+        className="m-2 rounded-xl bg-white px-4 py-1.5 disabled:bg-green-200"
+        disabled={disabled}
       />
       <button
         type="button"

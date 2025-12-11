@@ -1,4 +1,4 @@
-export default function IncompleteTodos({ todos, onClickDelete, onClickComplete }) {
+export default function IncompleteTodos({ todos, onClickDelete, onClickComplete}) {
   return (
     <div className="m-2 min-h-52 max-w-md rounded-xl border border-green-500 p-2">
       <p className="mt-0 mb-3 text-center font-black">未完了のTODO</p>

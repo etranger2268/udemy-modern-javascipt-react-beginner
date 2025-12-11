@@ -30,9 +30,21 @@ export default function Todo() {
     setIncompleteTodos((prev) => [...prev, completeTodos[index]]);
   };
 
+  const isMaxLimitIncompleteTodos = incompleteTodos.length >= 5;
+
   return (
     <>
-      <InputTodo todoText={todoText} onChange={onChangeTodoText} onClick={onClickAdd} />
+      <InputTodo
+        todoText={todoText}
+        onChange={onChangeTodoText}
+        onClick={onClickAdd}
+        disabled={isMaxLimitIncompleteTodos}
+      />
+      {isMaxLimitIncompleteTodos && (
+        <p className="text-red-700 m-2 font-semibold">
+          登録できるTODOは5個までだよ～、消化しろ～。
+        </p>
+      )}
       <IncompleteTodos
         todos={incompleteTodos}
         onClickDelete={onClickDelete}
